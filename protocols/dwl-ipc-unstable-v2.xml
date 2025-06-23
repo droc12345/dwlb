@@ -163,6 +163,20 @@ I would probably just submit raphi's patchset but I don't think that would be po
       <arg name="index" type="uint" summary="index of a layout recieved by dwl_ipc_manager.layout"/>
     </request>
 
+    <request name="quit" since="2">
+      <description summary="Quit maomao">This request allows clients to instruct the compositor to quit maomao.</description>
+    </request>
+
+    <request name="dispatch" since="2">
+      <description summary="Set the active tags of this output"/>
+      <arg name="dispatch" type="string" summary="dispatch name."/>
+      <arg name="arg1" type="string" summary="arg1."/>
+      <arg name="arg2" type="string" summary="arg2."/>
+      <arg name="arg3" type="string" summary="arg3."/>
+      <arg name="arg4" type="string" summary="arg4."/>
+      <arg name="arg5" type="string" summary="arg5."/>
+    </request>
+
     <!-- Version 2 -->
     <event name="fullscreen" since="2">
       <description summary="Update fullscreen status">
@@ -177,5 +191,35 @@ I would probably just submit raphi's patchset but I don't think that would be po
       </description>
       <arg name="is_floating" type="uint" summary="If the selected client is floating. Nonzero is valid, zero invalid"/>
     </event>
+
+    <event name="x" since="2">
+      <description summary="Update the x coordinates">
+          Indicates if x coordinates of the selected client.
+      </description>
+      <arg name="x" type="int" summary="x coordinate of the selected client"/>
+    </event>
+
+    <event name="y" since="2">
+      <description summary="Update the y coordinates">
+          Indicates if y coordinates of the selected client.
+      </description>
+      <arg name="y" type="int" summary="y coordinate of the selected client"/>
+    </event>
+
+    <event name="width" since="2">
+      <description summary="Update the width">
+          Indicates if width of the selected client.
+      </description>
+      <arg name="width" type="int" summary="width of the selected client"/>
+    </event>
+
+    <event name="height" since="2">
+      <description summary="Update the height">
+          Indicates if height of the selected client.
+      </description>
+      <arg name="height" type="int" summary="height of the selected client"/>
+    </event>
+
   </interface>
+
 </protocol>

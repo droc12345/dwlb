@@ -987,6 +987,30 @@ dwl_wm_output_floating(void *data, struct zdwl_ipc_output_v2 *dwl_wm_output,
 {
 }
 
+static void
+dwl_wm_output_x(void *data, struct zdwl_ipc_output_v2 *dwl_wm_output,
+	int32_t x)
+{
+}
+
+static void
+dwl_wm_output_y(void *data, struct zdwl_ipc_output_v2 *dwl_wm_output,
+	int32_t y)
+{
+}
+
+static void
+dwl_wm_output_width(void *data, struct zdwl_ipc_output_v2 *dwl_wm_output,
+	int32_t width)
+{
+}
+
+static void
+dwl_wm_output_height(void *data, struct zdwl_ipc_output_v2 *dwl_wm_output,
+	int32_t height)
+{
+}
+
 static const struct zdwl_ipc_output_v2_listener dwl_wm_output_listener = {
 	.toggle_visibility = dwl_wm_output_toggle_visibility,
 	.active = dwl_wm_output_active,
@@ -997,7 +1021,11 @@ static const struct zdwl_ipc_output_v2_listener dwl_wm_output_listener = {
 	.layout_symbol = dwl_wm_output_layout_symbol,
 	.frame = dwl_wm_output_frame,
 	.fullscreen = dwl_wm_output_fullscreen,
-	.floating = dwl_wm_output_floating
+	.floating = dwl_wm_output_floating,
+	.x = dwl_wm_output_x,
+	.y = dwl_wm_output_y,
+	.width = dwl_wm_output_width,
+	.height = dwl_wm_output_height
 };
 
 static void
@@ -1380,7 +1408,7 @@ parse_into_customtext(CustomText *ct, char *text)
 							snprintf(scrolldown_button->command, sizeof scrolldown_button->command, "%s", arg);
 							scrolldown_button->x1 = x;
 						}
-					} 
+					}
 
 					*--arg = '(';
 					*end = ')';
@@ -1789,7 +1817,7 @@ main(int argc, char **argv)
 		} else if (!strcmp(argv[i], "-active-color-title")) {
 			active_color_title = true;
 		} else if (!strcmp(argv[i], "-no-active-color-title")) {
-			active_color_title = false; 
+			active_color_title = false;
 		} else if (!strcmp(argv[i], "-font")) {
 			if (++i >= argc)
 				DIE("Option -font requires an argument");
