@@ -13,7 +13,6 @@ A fast, feature-complete bar originally for dwl, modified to work with maomaowm
 
 ## Installation
 ```bash
-git clone https://github.com/kolunmi/dwlb
 git clone --single-branch --branch mao https://github.com/droc12345/dwlb
 cd dwlb
 make
