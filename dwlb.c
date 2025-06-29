@@ -1011,6 +1011,12 @@ dwl_wm_output_height(void *data, struct zdwl_ipc_output_v2 *dwl_wm_output,
 {
 }
 
+static void
+dwl_wm_output_last_layer(void *data, struct zdwl_ipc_output_v2 *dwl_wm_output,
+	const char * last_layer)
+{
+}
+
 static const struct zdwl_ipc_output_v2_listener dwl_wm_output_listener = {
 	.toggle_visibility = dwl_wm_output_toggle_visibility,
 	.active = dwl_wm_output_active,
@@ -1025,7 +1031,8 @@ static const struct zdwl_ipc_output_v2_listener dwl_wm_output_listener = {
 	.x = dwl_wm_output_x,
 	.y = dwl_wm_output_y,
 	.width = dwl_wm_output_width,
-	.height = dwl_wm_output_height
+	.height = dwl_wm_output_height,
+	.last_layer = dwl_wm_output_last_layer
 };
 
 static void
